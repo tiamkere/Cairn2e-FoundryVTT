@@ -10,7 +10,7 @@ export class CairnActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["cairn", "sheet", "actor"],
-      template: "systems/cairn2e/templates/actor/actor-sheet.html",
+      template: "systems/cairn/templates/actor/actor-sheet.html",
       width: 600,
       height: 750,
       tabs: [
@@ -25,7 +25,7 @@ export class CairnActorSheet extends ActorSheet {
   }
 
   get template() {
-    const path = "systems/cairn2e/templates/actor";
+    const path = "systems/cairn/templates/actor";
     return `${path}/${this.actor.type}-sheet.html`;
   }
 
@@ -203,7 +203,7 @@ export class CairnActorSheet extends ActorSheet {
    */
   async _onItemCreate(event) {
     event.preventDefault();
-    const template = "systems/cairn2e/templates/dialog/add-item-dialog.html";
+    const template = "systems/cairn/templates/dialog/add-item-dialog.html";
     const content = await renderTemplate(template);
 
     new Dialog({
@@ -237,7 +237,7 @@ export class CairnActorSheet extends ActorSheet {
    */
   async _onContainerCreate(event) {
     event.preventDefault();
-    const template = "systems/cairn2e/templates/dialog/add-container-dialog.html";
+    const template = "systems/cairn/templates/dialog/add-container-dialog.html";
     const content = await renderTemplate(template);
 
     new Dialog({
@@ -272,7 +272,7 @@ export class CairnActorSheet extends ActorSheet {
    */
   async _onFeatureCreate(event) {
     event.preventDefault();
-    const template = "systems/cairn2e/templates/dialog/add-feature-dialog.html";
+    const template = "systems/cairn/templates/dialog/add-feature-dialog.html";
     const content = await renderTemplate(template);
 
     new Dialog({
@@ -305,7 +305,7 @@ export class CairnActorSheet extends ActorSheet {
   }
 
   async _onFeatureEdit(item) {
-    const template = "systems/cairn2e/templates/dialog/add-feature-dialog.html";
+    const template = "systems/cairn/templates/dialog/add-feature-dialog.html";
     const content = await renderTemplate(template, item);
     
     new Dialog({
@@ -427,7 +427,7 @@ export class CairnActorSheet extends ActorSheet {
   }
 
   _buildDamageRollMessage(label, targetIds) {
-    const rollMessageTpl = "systems/cairn2e/templates/chat/dmg-roll-card.html";
+    const rollMessageTpl = "systems/cairn/templates/chat/dmg-roll-card.html";
     const tplData = { label: label, targets: targetIds };
     return renderTemplate(rollMessageTpl, tplData);
   }

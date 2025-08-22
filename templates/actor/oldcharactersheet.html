@@ -2,16 +2,12 @@
     <div class="charater-sheet-grid">
         <!-- Portrait -->
         <img class="portrait" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
-        <!-- Name, background, omen, bond, HP and deprived -->
+        <!-- Name, background, HP and deprived -->
         <div class="character-sheet-section-name">
             <input class="name-input" type="text" name="name" value="{{data.name}}" placeholder="{{ localize 'CAIRN.Name' }}" />
             <input class="background-input" type="text" name="system.background" value="{{data.system.background}}"
-                placeholder="{{ localize 'CAIRN.Background' }}" />            
-	    <input class="bond-input" type="text" name="system.bond" value="{{data.system.bond}}"
-                placeholder="{{ localize 'CAIRN.Bond' }}" />
-            <input class="omen-input" type="text" name="system.omen" value="{{data.system.omen}}"
-                placeholder="{{ localize 'CAIRN.Omen' }}" />
-	    <div class="resource-counter hp-counter">
+                placeholder="{{ localize 'CAIRN.Background' }}" />
+            <div class="resource-counter hp-counter">
                 <label for="system.hp.value">{{ localize 'CAIRN.HitProtection' }}</label>
                 <div class="resource-input-wrapper">
                     <input type="text" name="system.hp.value" id="system.hp.value"

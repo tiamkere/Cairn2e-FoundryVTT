@@ -105,9 +105,9 @@ Hooks.on("renderChatMessage", (message, html, data) => {
 const configureHandleBar = () => {
   // Pre-load templates
   const templatePaths = [
-    "systems/cairn2e/templates/parts/items-list.html",
-    "systems/cairn2e/templates/parts/container-list.html",
-    "systems/cairn2e/templates/parts/feature-list.html",
+    "systems/cairn/templates/parts/items-list.html",
+    "systems/cairn/templates/parts/container-list.html",
+    "systems/cairn/templates/parts/feature-list.html",
   ];
 
   loadTemplates(templatePaths);

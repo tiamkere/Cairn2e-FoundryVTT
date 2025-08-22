@@ -21,7 +21,7 @@ export class CairnItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = 'systems/cairn2e/templates/item'
+    const path = 'systems/cairn/templates/item'
     return `${path}/${this.item.type}-sheet.html`
   }
 
