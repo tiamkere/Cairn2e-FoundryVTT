@@ -8,9 +8,15 @@
             <input class="background-input" type="text" name="system.background" value="{{data.system.background}}"
                 placeholder="{{ localize 'CAIRN.Background' }}" />            
 	    <input class="bond-input" type="text" name="system.bond" value="{{data.system.bond}}"
-                placeholder="{{ localize 'CAIRN.Bond' }}" />
-            <input class="omen-input" type="text" name="system.omen" value="{{data.system.omen}}"
-                placeholder="{{ localize 'CAIRN.Omen' }}" />
+								     placeholder="{{ localize 'CAIRN.Bond' }}" />
+            <!-- <input class="omen-input" type="text" name="system.omen" value="{{data.system.omen}}"
+								     placeholder="{{ localize 'CAIRN.Omen' }}" /> -->
+	    <!-- <div class="bond-input" data-group="primary" placeholder="{{ localize 'CAIRN.Bond'}}">
+                    {{ editor enrichedBond target="system.bond" button=true owner=owner editable=editable }}
+	    </div> -->
+	    <div class="omen-input" data-group="primary" placeholder="{{ localize 'CAIRN.Omen'}}">
+                    {{ editor enrichedOmen target="system.omen" button=true owner=owner editable=editable }}
+            </div>
 	    <div class="resource-counter hp-counter">
                 <label for="system.hp.value">{{ localize 'CAIRN.HitProtection' }}</label>
                 <div class="resource-input-wrapper">
@@ -33,8 +39,8 @@
         </div>
         <!-- Buttons -->
         <div class="character-sheet-section-buttons">
-            <button id="rest-button" type="button" class="strict-size-button" {{#if data.system.deprived}}disabled{{/if}}>{{ localize 'CAIRN.Rest' }}</button>
-            <button id="restore-abilities-button" type="button" class="strict-size-button" {{#if data.system.deprived}}disabled{{/if}}>{{ localize 'CAIRN.RestoreAbilities' }}</button>
+		<button id="rest-button" type="button" class="strict-size-button" title="{{ localize 'CAIRN.RestHover'}}" {{#if data.system.deprived}}disabled{{/if}}>{{ localize 'CAIRN.Rest' }}</button>
+		<button id="restore-abilities-button" type="button" class="strict-size-button" title="{{ localize 'CAIRN.RestoreAbilitiesHover'}}" {{#if data.system.deprived}}disabled{{/if}}>{{ localize 'CAIRN.RestoreAbilities' }}</button>
             <button id="die-of-fate-button" type="button" class="strict-size-button">{{ localize 'CAIRN.DieOfFate' }}</button>
         </div>
         <!-- Abilities -->

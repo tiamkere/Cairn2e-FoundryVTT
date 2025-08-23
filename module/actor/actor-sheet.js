@@ -48,8 +48,12 @@ export class CairnActorSheet extends ActorSheet {
     } else {
       data.enrichedDescription = await TextEditor.enrichHTML(this.actor.system.description, { async: true });
     }
+    // add bond and omen support; if an actor has bonds they're a character and also have omens
+    if (this.actor.system.bond) {
+	    data.enrichedBond = await TextEditor.enrichHTML(this.actor.system.bond, { async: true});
+    	    data.enrichedOmen = await TextEditor.enrichHTML(this.actor.system.omen, { async: true });
+    }
     data.enrichedNotes = await TextEditor.enrichHTML(this.actor.system.notes, { async: true });
-    
     return data;
   }
 
