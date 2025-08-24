@@ -1,0 +1,35 @@
+<form class="cairn" autocomplete="off">
+	<!-- use spellbook css since it's basically the same -->
+    <div class="item-sheet-grid spellbook">
+        <!-- Portrait -->
+        <div class="item-sheet-section-portrait">
+            <img class="portrait" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        </div>
+        <!-- Name -->
+        <div class="item-sheet-section-name">
+            <input class="name-input" type="text" name="name" value="{{data.name}}"
+                placeholder="{{ localize 'CAIRN.Name' }}" />
+        </div>
+        <!-- Resolved -->
+        <div class="resource-counter long-counter">
+            <label class="large-resource-label" for="system.equipped">{{ localize 'CAIRN.Resolved' }}</label>
+            <div class="resource-input-wrapper">
+                <input type="checkbox" {{checked data.system.resolved}} name="system.resolved" id="system.resolved"
+                    value="{{data.system.resolved}}" data-dtype="Boolean" />
+            </div>
+        </div>
+        
+	<!-- Descriptions -->
+
+        <div class="item-sheet-section-tabs">
+            <nav class="tabs" data-group="primary">
+                <a class="item" data-group="primary" data-tab="description">{{ localize 'CAIRN.Description' }}</a>
+            </nav>
+            <section class="content">
+                <div class="tab" data-group="primary" data-tab="description">
+                    {{ editor enrichedDescription target="system.description" button=true owner=owner editable=editable }}
+                </div>
+            </section>
+        </div>
+    </div>
+</form>
